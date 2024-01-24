@@ -18,7 +18,7 @@ class CategoryFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val btnDetailCategory: Button = view.findViewById(R.id.btn_category)
+        val btnDetailCategory: Button = view.findViewById(R.id.btn_detail_category)
         btnDetailCategory.setOnClickListener(this)
     }
 
