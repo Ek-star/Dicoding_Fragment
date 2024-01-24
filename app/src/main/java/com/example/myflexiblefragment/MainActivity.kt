@@ -17,8 +17,11 @@ class MainActivity : AppCompatActivity() {
             Log.d("MyFlexibleGFragment", "Fragment Name :" + HomeFragment::class.java.simpleName)
             fragmentManager
                 .beginTransaction()
+                // Memulai proses perubahan
                 .add(R.id.frame_container, homeFragment, HomeFragment::class.java.simpleName)
+                // Menambahkan objek fragment ke dalam layout container
                 .commit()
+                // Untuk eksekusi
         }
     }
 }
