@@ -24,7 +24,23 @@ class CategoryFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         if (v?.id == R.id.btn_detail_category) {
+            val detailCategoryFragment = DetailCategoryFragment()
 
+            val bundle = Bundle()
+            bundle.putString(DetailCategoryFragment.EXTRA_NAME, "Ekalma Toto Alloy Sembiring")
+            val description = "Kategori ini akan berisi produk-produk lifestyle"
+
+            detailCategoryFragment.arguments = bundle
+            // Kode diatas adalah cara mengambil data yang dikirimkan melalui obyek bundle pada fragment tujuan pun, sangatlah mudah. Cukup memanggil metode getArguments() di fragment DetailCategoryFragment seperti :
+            // val categoryName = arguments?.getString(EXTRA_NAME)
+            detailCategoryFragment.description = description
+
+            val fragmentManager = parentFragmentManager
+            fragmentManager?.beginTransaction()?.apply {
+                replace(R.id.frame_container, detailCategoryFragment, DetailCategoryFragment::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
         }
     }
 }
