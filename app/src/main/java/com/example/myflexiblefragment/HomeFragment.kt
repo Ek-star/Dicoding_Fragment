@@ -38,6 +38,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
             fragmentManager.beginTransaction().apply {
                 replace(R.id.frame_container, categoryFragment, CategoryFragment::class.java.simpleName)
                 addToBackStack(null)
+                // Kita menggunakan ".addToBackStack(null)" karena objek fragment yang saat ini diciptakan masuk ke dalam sebuah fragment stock. Nantinya ketika kita tekan tombol "back", ia akan pop out keluar dari stack dan menampilkan objek fragment sebelumnya HomeFragment
                 commit()
             }
         }
